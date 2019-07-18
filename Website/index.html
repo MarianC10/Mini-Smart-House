@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <button onclick="armare_casa()">Armeaza casa</button>
+        <button onclick="dezarmare_casa()">Dezarmeaza casa</button>
+        <form id="l1" method="POST" action="/sapte">
+        <input type="submit" value="verde">
+        </form>
+        <form id="l2" method="POST" action="/opt">
+            <input type="submit" value="rosu">
+            </form>
+        
+        
+    </body>
+    <script>
+        var socket = io('http://localhost');
+        function armare_casa(){
+            socket.emit("armare_casa",{valoare:true});
+        }
+        function dezarmare_casa(){
+            socket.emit("armare_casa",{valoare:false});
+        }
+    </script>
+</html>

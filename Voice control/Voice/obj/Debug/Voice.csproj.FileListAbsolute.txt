@@ -1,0 +1,20 @@
+D:\Victor Info\CSharp\Voice\Voice\bin\Debug\Voice.exe.config
+D:\Victor Info\CSharp\Voice\Voice\bin\Debug\Voice.exe
+D:\Victor Info\CSharp\Voice\Voice\bin\Debug\Voice.pdb
+D:\Victor Info\CSharp\Voice\Voice\obj\Debug\Voice.csprojAssemblyReference.cache
+D:\Victor Info\CSharp\Voice\Voice\obj\Debug\Voice.Form1.resources
+D:\Victor Info\CSharp\Voice\Voice\obj\Debug\Voice.Properties.Resources.resources
+D:\Victor Info\CSharp\Voice\Voice\obj\Debug\Voice.csproj.GenerateResource.cache
+D:\Victor Info\CSharp\Voice\Voice\obj\Debug\Voice.csproj.CoreCompileInputs.cache
+D:\Victor Info\CSharp\Voice\Voice\obj\Debug\Voice.exe
+D:\Victor Info\CSharp\Voice\Voice\obj\Debug\Voice.pdb
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\bin\Debug\Voice.exe.config
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\bin\Debug\Voice.exe
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\bin\Debug\Voice.pdb
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\obj\Debug\Voice.csprojAssemblyReference.cache
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\obj\Debug\Voice.Form1.resources
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\obj\Debug\Voice.Properties.Resources.resources
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\obj\Debug\Voice.csproj.GenerateResource.cache
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\obj\Debug\Voice.csproj.CoreCompileInputs.cache
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\obj\Debug\Voice.exe
+D:\Victor Info\Smart Home Mecatronica\Voice Controll C#\Voice\obj\Debug\Voice.pdb

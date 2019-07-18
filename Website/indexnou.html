@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="/socket.io/socket.io.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <button type="button" onclick="armeaza()" class="btn btn-outline-primary">Security on</button>
+    <button type="button" onclick="dezarmeaza()" class="btn btn-outline-secondary">Security off</button>
+    <button type="button" onclick="aprindere_dormitor()" class="btn btn-outline-danger">Bedroom light on</button>
+    <button type="button" onclick="stingere_dormitor()" class="btn btn-outline-warning">Bedroom light off</button>
+    <button type="button" onclick="lumina_relaxare()" class="btn btn-outline-info">Relaxing light in livingroom</button>
+    <button type="button" onclick="lumina_studiu()" class="btn btn-outline-info">Study light in livingroom</button>
+    <button type="button" onclick="lumina_seara()" class="btn btn-outline-info">Evening light in livingroom</button>
+    <button type="button" onclick="stingere_sufragerie()" class="btn btn-outline-dark">Livingroom light off</button>
+    <button type="button" onclick="deschidere_garaj()" class="btn btn-outline-primary">Open garage</button>
+    <button type="button" onclick="inchidere_garaj()" class="btn btn-outline-secondary">Close garage</button>
+    <button type="button" onclick="deschidere_usa()" class="btn btn-outline-success">Open door</button>
+    <button type="button" onclick="inchidere_usa()" class="btn btn-outline-danger">Close door</button>
+    <button type="button" onclick="termostat()" class="btn btn-outline-warning">Change thermostat's status</button>
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Garage door
+          <span class="badge badge-primary badge-pill" style="font-size:20px" id="usa_garaj"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Main door
+          <span class="badge badge-primary badge-pill" style="font-size:20px" id="usa_casa"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Bedroom light
+          <span class="badge badge-primary badge-pill" style="font-size:20px" id="bec_dormitor"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Secured
+            <span class="badge badge-primary badge-pill" style="font-size:20px" id="armata"></span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Thermostat status
+            <span class="badge badge-primary badge-pill" style="font-size:20px" id="termostat"></span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Livingroom light
+            <span class="badge badge-primary badge-pill" style="font-size:20px" id="bec_sufragerie"></span>
+          </li>
+      </ul> 
+</body>
+<script>
+    var socket = io.connect('http://localhost');
+    socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+    });
+    socket.on('armata', function (data) {
+        if (data.val==true)
+        {
+            document.getElementById('armata').innerHTML="Secured";
+        }
+        else
+        {
+            document.getElementById('armata').innerHTML="Not secured";
+        }
+    });
+    socket.on('termostat', function (data) {
+        if (data.val==true)
+        {
+            document.getElementById('termostat').innerHTML="day";
+        }
+        else
+        {
+            document.getElementById('termostat').innerHTML="night";
+        }
+    });
+    socket.on('bec_sufragerie', function (data) {
+        if (data.val==0)
+        {
+            document.getElementById('bec_sufragerie').innerHTML="off";
+        }
+        else if (data.val==1)
+        {
+            document.getElementById('bec_sufragerie').innerHTML="on, mode: 1";
+        }
+        else if (data.val==3)
+        {
+            document.getElementById('bec_sufragerie').innerHTML="on, mode: 7";
+        }
+        else if (data.val==5)
+        {
+            document.getElementById('bec_sufragerie').innerHTML="on, mode: 5";
+        }
+    });
+    socket.on('bec_dormitor', function (data) {
+        if (data.val==true)
+        {
+            document.getElementById('bec_dormitor').innerHTML="on";
+        }
+        else
+        {
+            document.getElementById('bec_dormitor').innerHTML="off";
+        }
+    });
+    socket.on('usa_garaj', function (data) {
+        if (data.val==true)
+        {
+            document.getElementById('usa_garaj').innerHTML="opened";
+        }
+        else
+        {
+            document.getElementById('usa_garaj').innerHTML="closed";
+        }
+    });
+    socket.on('usa_casa', function (data) {
+        if (data.val==true)
+        {
+            document.getElementById('usa_casa').innerHTML="opened";
+        }
+        else
+        {
+            document.getElementById('usa_casa').innerHTML="closed";
+        }
+    });
+    function armeaza() {
+        socket.emit('casa armata', { valoare: 'armata' });
+    }
+    function dezarmeaza() {
+        socket.emit('casa dezarmata', { valoare: 'dezarmata' });
+    }
+    function termostat() {
+        socket.emit('termostat pornit', { valoare: 'termostat pornit' });
+    }
+    function aprindere_dormitor() {
+        socket.emit('lumina dormitor aprinsa', { valoare: 'lumina dormitor aprinsa' });
+    }
+    function stingere_dormitor() {
+        socket.emit('lumina dormitor stinsa', { valoare: 'lumina dormitor stinsa' });
+    }
+    function lumina_relaxare() {
+        socket.emit('lumina sufragerie relaxare', { valoare: 'lumina sufragerie relaxare' });
+    }
+    function lumina_studiu()
+    {
+        socket.emit('lumina sufragerie studiu', {valoare:'lumina sufragerie studiu'});
+    }
+    function lumina_seara()
+    {
+        socket.emit('lumina sufragerie seara',{valoare:'lumina sufragerie seara'});
+    }
+    function stingere_sufragerie() {
+        socket.emit('lumina sufragerie stinsa', { valoare: 'lumina sufragerie stinsa' });
+    }
+    function deschidere_garaj() {
+        socket.emit('garaj deschis', { valoare: 'garaj deschis' });
+    }
+    function inchidere_garaj() {
+        socket.emit('garaj inchis', { valoare: 'garaj inchis' });
+    }
+
+    function deschidere_usa() {
+        socket.emit('usa deschisa', { value: 'usa deschisa' });
+    }
+
+    function inchidere_usa() {
+        socket.emit('usa inchisa', { value: 'usa inchisa' });
+    }
+
+</script>

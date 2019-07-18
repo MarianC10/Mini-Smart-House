@@ -1,0 +1,1 @@
+Current humidity is 57 percent and temperature is 22 degrees Celsius
