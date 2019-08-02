@@ -1,0 +1,20 @@
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\bin\Debug\UnitTest.exe.config
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\bin\Debug\UnitTest.exe
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\bin\Debug\UnitTest.pdb
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\obj\Debug\UnitTest.csprojAssemblyReference.cache
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\obj\Debug\UnitTest.Form1.resources
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\obj\Debug\UnitTest.Properties.Resources.resources
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\obj\Debug\UnitTest.csproj.GenerateResource.cache
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\obj\Debug\UnitTest.csproj.CoreCompileInputs.cache
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\obj\Debug\UnitTest.exe
+D:\Victor info\Smart Home Mecatronica\UnitTest\UnitTest\obj\Debug\UnitTest.pdb
+D:\Smart house\voice-control-c\UnitTest\UnitTest\bin\Debug\UnitTest.exe.config
+D:\Smart house\voice-control-c\UnitTest\UnitTest\bin\Debug\UnitTest.exe
+D:\Smart house\voice-control-c\UnitTest\UnitTest\bin\Debug\UnitTest.pdb
+D:\Smart house\voice-control-c\UnitTest\UnitTest\obj\Debug\UnitTest.csprojAssemblyReference.cache
+D:\Smart house\voice-control-c\UnitTest\UnitTest\obj\Debug\UnitTest.Form1.resources
+D:\Smart house\voice-control-c\UnitTest\UnitTest\obj\Debug\UnitTest.Properties.Resources.resources
+D:\Smart house\voice-control-c\UnitTest\UnitTest\obj\Debug\UnitTest.csproj.GenerateResource.cache
+D:\Smart house\voice-control-c\UnitTest\UnitTest\obj\Debug\UnitTest.csproj.CoreCompileInputs.cache
+D:\Smart house\voice-control-c\UnitTest\UnitTest\obj\Debug\UnitTest.exe
+D:\Smart house\voice-control-c\UnitTest\UnitTest\obj\Debug\UnitTest.pdb

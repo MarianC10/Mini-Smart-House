@@ -1,1 +1,1 @@
-Current humidity is 57 percent and temperature is 22 degrees Celsius
+Current humidity is -999 percent and temperature is -999 degrees Celsius

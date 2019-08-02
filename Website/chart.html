@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Consumption chart</title>
+        <!-- import plugin script -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    </head>
+    <body>
+        <!-- bar chart canvas element -->
+        <canvas id="barChart"></canvas>
+        <input type="button" value="test" onclick="reset_timer()">
+        <script>
+
+var barCtx = document.getElementById("barChart");
+var myBarChart = new Chart(barCtx, {
+    type: 'bar',
+    data: {
+        labels: ["Full consumption", "Bedroom consumption", "Livingroom consumption"],
+        datasets: [{
+            label: 'Consumption',
+            data: [0, 0, 0],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(23,100,88,0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(23,100,88,0.2)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+
+    var socket = io.connect('http://localhost');
+
+    socket.on('consum', function (data) {
+        update_data(data.total,data.dormitor, data.sufragerie);
+    });
+
+    function update_data(full_time, bedroom_time, livingroom_time)
+    {
+        myBarChart.data.datasets[0].data[0]=100*full_time/3600;
+        myBarChart.data.datasets[0].data[1]=bedroom_time*100/3600;
+        myBarChart.data.datasets[0].data[2]=livingroom_time*100/3600;
+        myBarChart.update();
+    }
+
+    function reset_timer()
+    {
+        socket.emit('reset',{val:0});
+    }
+
+        </script>
+    </body>
+</html>
